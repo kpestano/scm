@@ -26,6 +26,7 @@ public abstract class BaseModel {
 	@Temporal(TemporalType.DATE)
 	private Date dateModified;
 	
+	@Column(name = "STATUS")
 	private Status status;
 
 	/**
