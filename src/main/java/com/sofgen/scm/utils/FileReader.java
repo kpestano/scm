@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * @author tpenarubia
+ *
+ */
 public class FileReader {
 	private String file;
 	private List<String> fileLines  = new ArrayList<>();

@@ -3,14 +3,26 @@ package com.sofgen.scm.model;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.sofgen.scm.enums.Status;
 
+/**
+ * @author tpenarubia
+ *
+ */
 @MappedSuperclass
 public abstract class BaseModel {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
+	private long id;
 
 	@Column(name = "CREATED_BY")
 	private String createdBy;
@@ -28,6 +40,20 @@ public abstract class BaseModel {
 	
 	@Column(name = "STATUS")
 	private Status status;
+
+	/**
+	 * @return the id
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the createdBy

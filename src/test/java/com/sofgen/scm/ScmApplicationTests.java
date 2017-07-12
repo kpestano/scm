@@ -7,9 +7,12 @@ import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.sofgen.scm.model.User;
+import com.sofgen.scm.service.UserService;
 import com.sofgen.scm.utils.FileReader;
 
 @RunWith(SpringRunner.class)
@@ -22,6 +25,9 @@ public class ScmApplicationTests {
 	String file4 = "D://PROJECTS//SCM//fileFolder//file4.txt";
 	String file5 = "D://PROJECTS//SCM//fileFolder//file5.txt";
 	FileReader file = new FileReader(file1);
+	
+	@Autowired
+	private UserService userService;
 
 	//@Test
 	public void contextLoads() {
@@ -56,6 +62,34 @@ public class ScmApplicationTests {
 	@Test
 	public void testCompareFile1toFile5(){
         assertTrue(file.compare(file5));
+	}
+	
+	@Test
+	public void addUser(){
+		User user = new User();
+		
+		user.setFirstname("Kevin");
+		user.setLastname("Pestano");
+		user.setGender("Gay");
+		user.setUsername("iAmSoPogi");
+		user.setPassword("POGIAKO");
+		
+		userService.addUser(user);
+	}
+	
+	
+	@Test
+	public void getAllUsers(){
+		List<User> users =  userService.getUsers();
+        assertNotNull(users);
+	}
+	
+	@Test
+	public void deleteUser(){
+		List<User> users =  userService.getUsers();
+	    User user = userService.findUser(users.get(0).getId());	
+		userService.delete(user);
+		assertNull(user);
 	}
 
 }
