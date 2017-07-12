@@ -9,6 +9,10 @@ import com.sofgen.scm.dao.FileDAO;
 import com.sofgen.scm.model.File;
 import com.sofgen.scm.service.FileService;
 
+/**
+ * @author tpenarubia
+ *
+ */
 @Service
 public class FileServiceImpl implements FileService{
 	

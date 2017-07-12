@@ -1,28 +1,17 @@
 package com.sofgen.scm.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @author tpenarubia
+ *
+ */
 @Entity
 @Table(name="TBL_FILE")
-public class File extends BaseModel implements Serializable{
+public class File extends BaseModel{
 
-	/**
-	 * Generated serial uid
-	 */
-	private static final long serialVersionUID = 2436266008006966705L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
-	private int id;
-	
 	@Column(name = "NAME", unique = true, nullable = false)
 	private String filename;
 	
@@ -32,19 +21,6 @@ public class File extends BaseModel implements Serializable{
 	@Column(name = "VERSION")
 	private String version;
 
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	/**
 	 * @return the filename
@@ -93,7 +69,7 @@ public class File extends BaseModel implements Serializable{
 	 */
 	@Override
 	public String toString() {
-		return "File [id=" + id + ", filename=" + filename + ", filepath=" + filepath + ", version=" + version + "]";
+		return "File [id=" + getId() + ", filename=" + filename + ", filepath=" + filepath + ", version=" + version + "]";
 	}
 	
 }

@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.sofgen.scm.model.File;
 
+/**
+ * @author tpenarubia
+ *
+ */
 public interface FileDAO{
 	
 	List<File> getAllFiles();

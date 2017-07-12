@@ -8,24 +8,30 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.sofgen.scm.model.File;
-import com.sofgen.scm.service.FileService;
+import com.sofgen.scm.model.User;
+import com.sofgen.scm.service.UserService;
 
 /**
  * @author tpenarubia
  *
  */
 @Controller
-@RequestMapping("file")
-public class FileController {
+@RequestMapping("user")
+public class UserController {
 
 	@Autowired
-	private FileService fileService;
+	private UserService userService;
 	
 	@GetMapping("all")
-	public ResponseEntity<List<File>> getAllArticles() {
-		List<File> list = fileService.getAllFiles();
-		return new ResponseEntity<List<File>>(list, HttpStatus.OK);
+	public ResponseEntity<List<User>> getAllUsers() {
+		List<User> users = userService.getUsers();
+		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+	}
+	
+	@RequestMapping("trial")
+	String index(){
+		return "index";
 	}
 }
