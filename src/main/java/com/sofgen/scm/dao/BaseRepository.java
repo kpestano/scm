@@ -6,6 +6,12 @@ import java.util.List;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.Repository;
 
+/**
+ * @author tpenarubia
+ *
+ * @param <T>
+ * @param <ID>
+ */
 @NoRepositoryBean
 public interface BaseRepository<T, ID extends Serializable> extends Repository<T, Long>{
 

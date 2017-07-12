@@ -1,5 +1,9 @@
 package com.sofgen.scm.enums;
 
+/**
+ * @author tpenarubia
+ *
+ */
 public enum Status {
 
 	ACTIVE(1), INACTIVE(0);

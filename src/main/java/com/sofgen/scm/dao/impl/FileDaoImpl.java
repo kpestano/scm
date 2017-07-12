@@ -11,6 +11,10 @@ import org.springframework.stereotype.Repository;
 import com.sofgen.scm.dao.FileDAO;
 import com.sofgen.scm.model.File;
 
+/**
+ * @author tpenarubia
+ *
+ */
 @Transactional
 @Repository
 public class FileDaoImpl implements FileDAO{
