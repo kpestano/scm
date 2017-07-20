@@ -70,8 +70,6 @@ public class ScmApplicationTests {
 		
 		user.setFirstName("Kevin");
 		user.setLastName("Pestano");
-		user.setGender("Gay");
-		user.setUsername("EdwinBondocPogi");
 		user.setPassword("POGIAKO");
 		
 		userService.save(user);
