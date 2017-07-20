@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @author tpenarubia
  *
  */
+//(exclude = {SecurityAutoConfiguration.class })
 @SpringBootApplication
 @EnableAutoConfiguration
 @ComponentScan
