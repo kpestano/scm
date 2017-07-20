@@ -2,6 +2,9 @@ package com.sofgen.scm.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -11,14 +14,19 @@ import javax.persistence.Table;
 @Entity
 @Table(name="TBL_FILE")
 public class File extends BaseModel{
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="file_id")
+	private Long id;
 
-	@Column(name = "NAME", unique = true, nullable = false)
+	@Column(name = "filename", unique = true, nullable = false)
 	private String filename;
 	
-	@Column(name = "PATH")
+	@Column(name = "path")
 	private String filepath;
 	
-	@Column(name = "VERSION")
+	@Column(name = "version")
 	private String version;
 
 
@@ -64,12 +72,4 @@ public class File extends BaseModel{
 		this.version = version;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "File [id=" + getId() + ", filename=" + filename + ", filepath=" + filepath + ", version=" + version + "]";
-	}
-	
 }

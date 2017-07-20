@@ -10,8 +10,8 @@ import com.sofgen.scm.model.User;
  * @author tpenarubia
  *
  */
-
+@Repository("userDAO")
 public interface UserDAO extends BaseRepository<User, Long>{
 
-	List<User> findByUsername(String firstname);
+	User findByEmail(String email);
 }

@@ -19,41 +19,22 @@ import com.sofgen.scm.enums.Status;
 @MappedSuperclass
 public abstract class BaseModel {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
-	private long id;
-
-	@Column(name = "CREATED_BY")
+	@Column(name = "created_by")
 	private String createdBy;
 	
-	@Column(name = "CREATED_DATE")
+	@Column(name = "created_date")
 	@Temporal(TemporalType.DATE)
-	private Date dateCreated;
+	private Date createdDate;
 	
-	@Column(name = "MODIFIED_BY")
+	@Column(name = "modified_by")
 	private String modifiedBy;
 	
-	@Column(name = "MODIFIED_DATE")
+	@Column(name = "modified_date")
 	@Temporal(TemporalType.DATE)
-	private Date dateModified;
+	private Date modifiedDate;
 	
 	@Column(name = "STATUS")
-	private Status status;
-
-	/**
-	 * @return the id
-	 */
-	public long getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
+	private int status;
 
 	/**
 	 * @return the createdBy
@@ -67,6 +48,20 @@ public abstract class BaseModel {
 	 */
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
+	}
+
+	/**
+	 * @return the createdDate
+	 */
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	/**
+	 * @param createdDate the createdDate to set
+	 */
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
 	}
 
 	/**
@@ -84,44 +79,31 @@ public abstract class BaseModel {
 	}
 
 	/**
-	 * @return the dateCreated
+	 * @return the modifiedDate
 	 */
-	public Date getDateCreated() {
-		return dateCreated;
+	public Date getModifiedDate() {
+		return modifiedDate;
 	}
 
 	/**
-	 * @param dateCreated the dateCreated to set
+	 * @param modifiedDate the modifiedDate to set
 	 */
-	public void setDateCreated(Date dateCreated) {
-		this.dateCreated = dateCreated;
-	}
-
-	/**
-	 * @return the dateModified
-	 */
-	public Date getDateModified() {
-		return dateModified;
-	}
-
-	/**
-	 * @param dateModified the dateModified to set
-	 */
-	public void setDateModified(Date dateModified) {
-		this.dateModified = dateModified;
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
 	}
 
 	/**
 	 * @return the status
 	 */
-	public Status getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
 	/**
 	 * @param status the status to set
 	 */
-	public void setStatus(Status status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
+
 }
