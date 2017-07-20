@@ -10,8 +10,13 @@ import com.sofgen.scm.model.User;
  */
 public interface UserService {
 
-	User addUser(User user);
-	void delete(User user);
+	User save(User user);
+	
+	void delete(Long id);
+	
 	List<User> getUsers();
-	User findUser(long id);
+	
+	User findUser(Long id);
+	
+	List<User> findByUsername(String username);
 }

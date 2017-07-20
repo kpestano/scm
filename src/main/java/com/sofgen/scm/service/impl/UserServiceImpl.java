@@ -20,13 +20,23 @@ public class UserServiceImpl implements UserService{
 	private UserDAO userDAO;
 
 	@Override
-	public User addUser(User user) {
+	public User save(User user) {
+		if(user.getId() > 0){
+			User update = userDAO.findOne(user.getId());
+			update.setFirstName(user.getFirstName());
+			update.setLastName(user.getLastName());
+			update.setGender(user.getGender());
+			update.setBirthdate(user.getBirthdate());
+			update.setUsername(user.getUsername());
+			update.setPassword(user.getPassword());
+			user = update;
+		}
 		return userDAO.save(user);
 	}
 
 	@Override
-	public void delete(User user) {
-		userDAO.delete(user);
+	public void delete(Long id) {
+		userDAO.delete(id);
 	}
 
 	@Override
@@ -35,8 +45,13 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public User findUser(long id) {
+	public User findUser(Long id) {
 		return userDAO.findOne(id);
+	}
+
+	@Override
+	public List<User> findByUsername(String username) {
+		return userDAO.findByUsername(username);
 	}
 	
 }

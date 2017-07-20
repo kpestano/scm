@@ -15,7 +15,7 @@ import org.springframework.data.repository.Repository;
 @NoRepositoryBean
 public interface BaseRepository<T, ID extends Serializable> extends Repository<T, Long>{
 
-	void delete(T deleted);
+	void delete(ID id);
 	List<T> findAll();
 	T findOne(ID id);
 	T save(T persisted);

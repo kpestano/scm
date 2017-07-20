@@ -14,11 +14,11 @@ import javax.persistence.Table;
 @Table(name="TBL_USER")
 public class User extends BaseModel{
 
-	@Column(name = "FIRSTNAME")
-	private String firstname;
+	@Column(name = "firstName")
+	private String firstName;
 	
-	@Column(name = "LASTNAME")
-	private String lastname;
+	@Column(name = "lastName")
+	private String lastName;
 	
 	@Column(name = "GENDER")
 	private String gender;
@@ -33,31 +33,31 @@ public class User extends BaseModel{
 	private String password;
 
 	/**
-	 * @return the firstname
+	 * @return the firstName
 	 */
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
 
 	/**
-	 * @param firstname the firstname to set
+	 * @param firstName the firstName to set
 	 */
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	/**
-	 * @return the lastname
+	 * @return the lastName
 	 */
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
 
 	/**
-	 * @param lastname the lastname to set
+	 * @param lastName the lastName to set
 	 */
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	/**
@@ -121,7 +121,7 @@ public class User extends BaseModel{
 	 */
 	@Override
 	public String toString() {
-		return "User [id=" + getId() + ", firstname=" + firstname + ", lastname=" + lastname + ", gender=" + gender + ", birthdate="
-				+ birthdate + ", username=" + username + ", password=" + password + "]";
+		return "User [id=" + getId() + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender + ", birthdate="
+				+ birthdate + ", username=" + username + "]";
 	}
 }
