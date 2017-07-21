@@ -3,14 +3,9 @@ package com.sofgen.scm.model;
 import java.util.Date;
 
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import com.sofgen.scm.enums.Status;
 
 /**
  * @author tpenarubia
@@ -23,14 +18,14 @@ public abstract class BaseModel {
 	private String createdBy;
 	
 	@Column(name = "created_date")
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdDate;
 	
 	@Column(name = "modified_by")
 	private String modifiedBy;
 	
 	@Column(name = "modified_date")
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date modifiedDate;
 	
 	@Column(name = "STATUS")
