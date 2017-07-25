@@ -1,13 +1,48 @@
-<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" 
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sofgen Change Manager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <!-- JQuery -->
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.min.js" th:src="@{/webjars/jquery/3.2.1/dist/jquery.min.js}"></script>
+    <!-- Bootstrap -->
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    
+    <!-- Custom CSS -->
+    <link th:href="@{/css/sb-admin.css}" rel="stylesheet">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
-    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Task List</title>
+    <!-- Morris Charts CSS -->
+    <link th:href="@{/css/plugins/morris.css}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link th:href="@{/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+    
+    <!-- Morris Charts JavaScript -->
+    <script th:src="@{/js/plugins/morris/raphael.min.js}"></script>
+    <script th:src="@{/js/plugins/morris/morris.min.js}"></script>
+    <script th:src="@{/js/plugins/morris/morris-data.js}"></script>
 </head>
-   <body>
-      <div th:replace="fragments/header :: header">Header</div>
-      <div th:replace="${view} :: content">Page Content</div>
-      <div th:replace="fragments/footer :: footer">Footer</div>
-  </body>
+<body>
+
+<div th:replace="fragments/header :: header">
+</div>
+
+<div class="container">
+    <div layout:fragment="content">
+    </div >
+</div>
+
+<div th:replace="fragments/footer :: footer">
+</div>
+</body>
 </html>
